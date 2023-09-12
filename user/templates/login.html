@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+
+
+
+{% load static %}
+
+
+
+{% block title %}{{ title }}{% endblock %}
+
+
+
+{% block content %}
+
+<!-- register html -->
+
+<div class="container" style="padding-top: 220px; padding-left: 25%; padding-bottom: 30px;">
+
+    <div class="row">
+
+        <div class="col-md-12">
+
+            <form method="post" action="" enctype="multipart/form-data">
+
+                {% csrf_token %}
+
+                {{ error }}
+
+                {% for field in form %}
+
+                <div class="col-md-12 mb-3 mt-3">
+
+                    {{ field }}
+                    <br>
+
+                </div>
+
+                {% endfor %}
+
+                
+
+                <div class="col-md-6 mb-3">
+
+                <button class="btn text-white bg-success">Login</button>
+
+              
+
+               
+
+            </div>  
+
+            </form>
+            <a class="btn btn-primary" href="{% url 'social:begin' 'google-oauth2' %}">
+                Login google
+            </a>
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}
