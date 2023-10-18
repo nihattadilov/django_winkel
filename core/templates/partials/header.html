@@ -24,10 +24,25 @@
 </div>
 <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
     <div class="container">
-      <a class="navbar-brand" href="index.html">{{settings.logo}}</a>
+      <a class="navbar-brand" href="{% url 'home' %}">{{settings.logo}}</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="oi oi-menu"></span> {% trans 'Menu' %} 
       </button>
+
+      <div class="collapse navbar-collapse" id="ftco-nav">
+        <ul class="navbar-nav ml-auto">
+  
+  
+          <!-- Search Form -->
+          <li class="nav-item">
+            <form method="get" action="{% url 'search' %}" class="form-inline my-2 my-lg-0">
+              <input class="form-control mr-sm-2"  name='search' type="search" placeholder="{% trans 'Search' %}" aria-label="Search">
+              <button class="btn btn-outline-success my-2 my-sm-0" type="submit">{% trans 'Search' %}</button>
+            </form>
+          </li>
+          <!-- End Search Form -->
+        </ul>
+      </div>
 
       <div class="collapse navbar-collapse" id="ftco-nav">
         <ul class="navbar-nav ml-auto">
@@ -35,14 +50,14 @@
           <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{% trans 'Shop' %} </a>
           <div class="dropdown-menu" aria-labelledby="dropdown04">
-              <a class="dropdown-item" href="shop.html">{%trans 'Shop'%} </a>
-            <a class="dropdown-item" href="product-single.html">{%trans 'Single Product'%}</a>
+              <a class="dropdown-item" href="{% url 'products' %}">{%trans 'Shop'%} </a>
+            <a class="dropdown-item" href="{% url 'product_single' 1 %}">{%trans 'Single Product'%}</a>
             <a class="dropdown-item" href="cart.html">{%trans 'Cart'%}</a>
             <a class="dropdown-item" href="checkout.html">{%trans 'Checkout'%}</a>
           </div>
         </li>
-          <li class="nav-item"><a href="about.html" class="nav-link">{%trans 'About'%}</a></li>
-          <li class="nav-item"><a href="blog.html" class="nav-link">{%trans 'Blog'%}</a></li>
+          <li class="nav-item"><a href="{% url 'about' %}" class="nav-link">{%trans 'About'%}</a></li>
+          <li class="nav-item"><a href="{% url 'news' %}" class="nav-link">{%trans 'Blog'%}</a></li>
           <li class="nav-item"><a href="{% url 'contact' %}" class="nav-link">{%trans 'Contact'%}</a></li>
           {% if user.is_authenticated %}
                                     <li class="nav-item"><a class="nav-link" href="{% url 'logout' %}">{%trans 'Logout'%} </a></li>
@@ -54,11 +69,27 @@
                                         
                                     
                                     {% endif %}
-          <li class="nav-item cta cta-colored"><a href="cart.html" class="nav-link"><span class="icon-shopping_cart"></span>[0]</a></li>
+            
           
         <div>
             <a href="{% url 'social:begin' 'google-oauth2' %}"><i class="fa-brands fa-google"></i></a>
         </div>
+
+        <form id="languageForm" action="{% url 'set_language' %}" method="post" style="display: block;">
+          {% csrf_token %}
+          <input type="hidden" name="next" value="{{ request.path }}">
+          <select style="width: 50px; height: 30px; border-radius: 15%; border: none; color: rgb(112, 58, 58); font-size: 18px;" name="language" onchange="this.form.submit()">
+              {% get_current_language as LANGUAGE_CODE %}
+              
+              {% get_available_languages as LANGUAGES %}
+              {% get_language_info_list for LANGUAGES as languages %}
+              {% for language in languages %}
+              <option class="{% if language.code == LANGUAGE_CODE %} d-none {% endif %}" value="{{ language.code }}" {% if language.code == LANGUAGE_CODE %}selected{% endif %}>
+                  {{ language.code|title }}
+              </option>
+              {% endfor %}
+          </select>
+       </form>
 
         </ul>
       </div>

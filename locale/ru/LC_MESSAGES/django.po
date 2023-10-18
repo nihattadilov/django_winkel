@@ -9,16 +9,15 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-09-12 16:47+0000\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"PO-Revision-Date: 2023-09-15 12:15+0000\n"
+"Last-Translator:   <>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
-"%100>=11 && n%100<=14)? 2 : 3);\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n%100>=11 && n%100<=14)? 2 : 3);\n"
+"X-Translated-Using: django-rosetta 0.9.9\n"
 
 #: core/models.py:28 core/models.py:29
 msgid "Settings"
@@ -40,7 +39,8 @@ msgstr "Продукты"
 msgid "Testimonial"
 msgstr "Отзыв"
 
-#: core/models.py:102 core/models.py:103 core/templates/partials/footer.html:47
+#: core/models.py:102 core/models.py:103
+#: core/templates/partials/footer.html:47
 #: core/templates/partials/header.html:46
 msgid "Contact"
 msgstr "Контакт"
@@ -49,27 +49,27 @@ msgstr "Контакт"
 msgid ""
 "Far far away, behind the word mountains, far from the countries Vokalia and "
 "Consonantia "
-msgstr ""
+msgstr "Далеко-далеко, за словом горы, далеко от стран Вокалия и Согласная."
 
 #: core/templates/partials/footer.html:26
 #: core/templates/partials/header.html:29
 msgid "Menu"
-msgstr ""
+msgstr "Меню"
 
 #: core/templates/partials/footer.html:28
 #: core/templates/partials/header.html:36
 #: core/templates/partials/header.html:38
 msgid "Shop"
-msgstr ""
+msgstr "Магазин"
 
 #: core/templates/partials/footer.html:29
 #: core/templates/partials/header.html:44
 msgid "About"
-msgstr ""
+msgstr "О нас"
 
 #: core/templates/partials/footer.html:30
 msgid "Journal"
-msgstr ""
+msgstr "Журнал"
 
 #: core/templates/partials/footer.html:31
 #, fuzzy
@@ -79,35 +79,35 @@ msgstr "Контакт"
 
 #: core/templates/partials/footer.html:37
 msgid "Help"
-msgstr ""
+msgstr "Помощь"
 
 #: core/templates/partials/footer.html:40
 msgid "Shipping Information"
-msgstr ""
+msgstr "информация о доставке"
 
 #: core/templates/partials/footer.html:41
 msgid "Returns &amp; Exchange"
-msgstr ""
+msgstr "Возврат и усиление; Обмен"
 
 #: core/templates/partials/footer.html:42
 msgid "Terms &amp; Conditions"
-msgstr ""
+msgstr "Условия &amp; Условия"
 
 #: core/templates/partials/footer.html:43
 msgid "Privacy Policy"
-msgstr ""
+msgstr "политика конфиденциальности"
 
 #: core/templates/partials/footer.html:46
 msgid "FAQs"
-msgstr ""
+msgstr "Часто задаваемые вопросы"
 
 #: core/templates/partials/footer.html:54
 msgid "Have a Questions?"
-msgstr ""
+msgstr "Есть вопросы?"
 
 #: core/templates/partials/header.html:34
 msgid "Home "
-msgstr ""
+msgstr "Дом"
 
 #: core/templates/partials/header.html:39
 #, fuzzy
@@ -117,27 +117,27 @@ msgstr "Продукты"
 
 #: core/templates/partials/header.html:40
 msgid "Cart"
-msgstr ""
+msgstr "Корзина"
 
 #: core/templates/partials/header.html:41
 msgid "Checkout"
-msgstr ""
+msgstr "Проверить"
 
 #: core/templates/partials/header.html:45
 msgid "Blog"
-msgstr ""
+msgstr "Блог"
 
 #: core/templates/partials/header.html:48
 msgid "Logout"
-msgstr ""
+msgstr "Выйти"
 
 #: core/templates/partials/header.html:52
 msgid "Sign in"
-msgstr ""
+msgstr "Войти"
 
 #: core/templates/partials/header.html:53
 msgid "Sign up"
-msgstr ""
+msgstr "Зарегистрироваться"
 
 #: winkel/settings.py:170
 msgid "English"
