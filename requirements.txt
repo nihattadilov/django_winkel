@@ -16,8 +16,10 @@ cron-descriptor==1.4.0
 cryptography==41.0.3
 defusedxml==0.7.1
 Django==4.2.4
+django-adminlte-3==0.1.6
 django-celery-beat==2.5.0
 django-ckeditor==6.7.0
+django-dockerizer==0.2.2
 django-js-asset==2.1.0
 django-modeltranslation==0.18.11
 django-rosetta==0.9.9
