@@ -1,5 +1,7 @@
 from django.db import models
 from ckeditor.fields import RichTextField
+
+# from  embed_video.fields  import  EmbedVideoField
 from django.utils.translation import gettext as _
 
 
@@ -44,23 +46,45 @@ class Category(BaseModel):
         return self.title
 
 
+class Tag(BaseModel):
+    title = models.CharField(max_length=250,null=True)
+
+    def __str__(self):
+            return self.title
+        
+        
 class News(BaseModel):
     title = models.CharField(max_length=255)
     content = models.TextField()
+    content_add = models.TextField(null=True, blank=True)
     image = models.ImageField(upload_to="news", null=True, blank=True)
     like = models.IntegerField(default=0)
     dislike = models.IntegerField(default=0)
     views = models.IntegerField(default=0)
-    category = models.ForeignKey(
-        "Category", on_delete=models.CASCADE, related_name="news"
+    tag=models.ForeignKey(
+        "Tag", on_delete=models.CASCADE, related_name="news", null=True
     )
 
-    class Meta:
-        verbose_name = _("News")
-        verbose_name_plural = _("News")
+    # class Meta:
+    #     verbose_name = _("News")
+    #     verbose_name_plural = _("News")
 
     def __str__(self):
-        return "News"
+        return self.title
+
+
+class Clothing(BaseModel):
+    title = models.CharField(max_length=250, blank=True, null=True)
+    
+    def __str__(self):
+        return self.title
+
+
+class Jeans(BaseModel):
+    title = models.CharField(max_length=250, blank=True, null=True)
+    
+    def __str__(self):
+        return self.title
 
 
 class Products(BaseModel):
@@ -68,6 +92,12 @@ class Products(BaseModel):
     content = RichTextField()
     image = models.ImageField()
     price = models.IntegerField(default=0)
+    clothing = models.ForeignKey(
+        "Clothing", on_delete=models.CASCADE, related_name="products", null=True
+    )
+    jeans = models.ForeignKey(
+        "Jeans", on_delete=models.CASCADE, related_name="products", null=True
+    )
     category = models.ForeignKey(
         "Category", on_delete=models.CASCADE, related_name="products"
     )
@@ -111,3 +141,19 @@ class Contact(BaseModel):
 
     def __str__(self):
         return self.name
+
+
+class Subscriber(BaseModel):
+    email = models.EmailField()
+
+    def __str__(self):
+        return self.email
+
+
+class About(BaseModel):
+    title = models.CharField(max_length=250)
+    content = RichTextField()
+    # video_url = models.EmbedVideoField()
+
+    def __str__(self):
+        return self.title

@@ -1,62 +1,30 @@
 {% extends 'base.html' %}
-
-
-
 {% load static %}
 
+<link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}">
 
-
-{% block title %}{{ title }}{% endblock %}
-
-
+{% block title %}Registration Form{% endblock %}
 
 {% block content %}
-
-<!-- register html -->
-
-<div class="container" style="padding-top: 220px; padding-left: 25%; padding-bottom: 30px;">
-
+<div class="container" style="padding-top: 100px;">
     <div class="row">
-
-        <div class="col-md-12">
-
-            <form method="post" action="" enctype="multipart/form-data">
-
+        <div class="col-md-4 offset-md-4">
+            <form method="post" action="" enctype="multipart/form-data" class="registration-form">
                 {% csrf_token %}
-
                 {{ error }}
-
-                {% for field in form %}
-
-                <div class="col-md-12 mb-3 mt-3">
-
-                    {{ field }}
-                    <br>
-
+                <h2 class="form-title">Login Form</h2>
+                <div class="form-fields">
+                    {% for field in form %}
+                    <div class="form-group">
+                        {{ field.label_tag }}
+                        {{ field }}
+                    </div>
+                    {% endfor %}
                 </div>
-
-                {% endfor %}
-
-                
-
-                <div class="col-md-6 mb-3">
-
-                <button class="btn text-white bg-success">Login</button>
-
-              
-
-               
-
-            </div>  
-
+                <button class="btn btn-success" style="margin-bottom: 10px; display: block;">Login</button>
+                <a class="btn btn-primary social-button" href="{% url 'social:begin' 'google-oauth2' %}" style="margin-bottom: 10px; display: block;">Login with Google</a>
             </form>
-            <a class="btn btn-primary" href="{% url 'social:begin' 'google-oauth2' %}">
-                Login google
-            </a>
         </div>
-
     </div>
-
 </div>
-
 {% endblock %}

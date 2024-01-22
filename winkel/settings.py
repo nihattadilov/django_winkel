@@ -34,10 +34,12 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     "adminlte3",
     "adminlte3_theme",
-    "rest_framework",
+    'rest_framework',
+ #   'rest_framework_simplejwt',
     "drf_yasg",
     "modeltranslation",
     "user",
+    'rosetta',
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -48,6 +50,7 @@ INSTALLED_APPS = [
     "ckeditor",
     "social_django",
     "django_celery_beat",
+    # 'embed_video',
 ]
 
 MIDDLEWARE = [
@@ -156,6 +159,7 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 AUTHENTICATION_BACKENDS = (
     "social_core.backends.google.GoogleOAuth2",
+    'social_core.backends.facebook.FacebookOAuth2',
     "django.contrib.auth.backends.ModelBackend",
 )
 
@@ -194,7 +198,19 @@ CELERY_TIMEZONE = "Asia/Baku"
 
 EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
 EMAIL_HOST = "smtp.gmail.com"
-EMAIL_HOST_USER = "kenansdq@gmail.com"
-EMAIL_HOST_PASSWORD = "qfmctsymrvcrlgcq"
+EMAIL_HOST_USER = 'fargo1979navt@gmail.com'
+EMAIL_HOST_PASSWORD = 'cnlbfhuwbneojvux'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
+
+
+
+
+SOCIAL_AUTH_FACEBOOK_KEY = '688462783238016'
+SOCIAL_AUTH_FACEBOOK_SECRET = 'b366711ac5effdb955d6105459bae59a'
+
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': (
+        'rest_framework.permissions.AllowAny',
+    )
+}

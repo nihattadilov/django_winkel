@@ -1,5 +1,5 @@
 from django.contrib import admin
-from core.models import News, Setting, Category, Products, Testimonial, Contact
+from core.models import *
 
 # Register your models here.
 
@@ -8,6 +8,11 @@ admin.site.register(Category)
 admin.site.register(Testimonial)
 admin.site.register(Contact)
 admin.site.register(Products)
+admin.site.register(Subscriber)
+admin.site.register(Clothing)
+admin.site.register(Jeans)
+admin.site.register(About)
+admin.site.register(Tag)
 
 
 @admin.register(News)
@@ -18,7 +23,7 @@ class NewsAdmin(admin.ModelAdmin):
     ordering = ("-created_at",)
     readonly_fields = ("like", "dislike", "views", "created_at", "updated_at")
     fieldsets = (
-        (None, {"fields": ("title", "content", "image", "category", "is_active")}),
+        (None, {"fields": ("title", "content","content_add", "image", "tag", "is_active")}),
         (
             "Hide Fields",
             {"fields": ("like", "dislike", "views", "created_at", "updated_at")},
