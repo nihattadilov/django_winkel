@@ -1,7 +1,9 @@
 🛍️ Django Winkel
+
 Django Winkel is a multilingual (🇺🇸 English, 🇦🇿 Azerbaijani, 🇹🇷 Turkish) full-featured e-commerce and blog web application built with Django. It is designed for online clothing stores and content-focused fashion platforms.
 
 🚀 Features
+
 ✅ Product listing with pagination & filtering (by clothing and jeans)
 
 📰 Blog/news section with tag-based filtering and search
