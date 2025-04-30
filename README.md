@@ -1,87 +1,99 @@
 🛍️ Django Winkel
-Django Winkel is a fully functional e-commerce and blog web application built with the Django framework. It supports product listings, category filtering, testimonials, blog posts, contact forms, and more. The project serves as a solid base for any online clothing store or content-driven fashion website.
+Django Winkel is a multilingual (🇺🇸 English, 🇦🇿 Azerbaijani, 🇹🇷 Turkish) full-featured e-commerce and blog web application built with Django. It is designed for online clothing stores and content-focused fashion platforms.
 
 🚀 Features
-Product listing with pagination and filtering (by clothing and jeans)
+✅ Product listing with pagination & filtering (by clothing and jeans)
 
-Blog/news section with tag-based filtering and search
+📰 Blog/news section with tag-based filtering and search
 
-Product detail and news detail pages
+🔍 Search function redirects to related product or news
 
-About page with video support
+📦 Product and news detail pages
 
-Contact form with saving functionality
+🧾 About page with video support
 
-Testimonials section
+📬 Contact form (saved to DB)
 
-Admin support via Django admin panel
+🗣️ Customer testimonials
 
-Dynamic discount calculation for products
+🛠️ Admin support via Django Admin Panel
+
+📉 Dynamic discount price calculation
+
+🌍 Multilingual support: English, Azerbaijani, Turkish
+
+👤 User features:
+
+Registration with password confirmation
+
+Login and logout support
+
+Form validations and error handling
 
 🧩 Models Overview
-Products: Includes title, content, image, price, clothing/jeans/category relation, and optional discount
+Products: Title, description, price, image, clothing/jeans/category relation, discount
 
-Clothing, Jeans, Category: Classifications for products
+Clothing / Jeans / Category: Product classifications
 
-News: Blog/news posts with tags, likes, dislikes, views
+News: Blog posts with tag, like, dislike, view count
 
-Tag: Categorizes news items
+Tag: Tags for news filtering
 
 Testimonial: Customer feedback
 
-Contact: Contact form messages
+Contact: Contact form submissions
 
-Subscriber: Newsletter/email list
+Subscriber: Newsletter subscriptions
 
 About: About page content
 
-Setting: Site-wide metadata (logo, social links, etc.)
+Setting: Global metadata (social links, logo, etc.)
 
 📄 Views Summary
-home: Displays products and testimonials on the homepage
 
-about: Shows company video and testimonials
+View Name	Description
+home	Homepage with products & testimonials
+about	About page with video and testimonials
+contact	GET/POST contact form with save to DB
+products	Product list, filtered and paginated
+news	News/blog with search and tag filtering
+product_single	Product detail page
+news_single	News detail page
+search	Redirects to news/products based on search input
+register	User registration with password match check
+login	User authentication/login
+logout_view	Logs out user and redirects to home
 
-contact: Handles the contact form (GET & POST)
 
-products: Filters and paginates products based on clothing/jeans
-
-news: Displays news list with search and tag filters
-
-product_single, news_single: Show detail pages for products and news
-
-search: Redirects based on search query (to news or product list)
 
 ⚙️ Setup Instructions
-1. Clone the repository
-bash
-Copy
-Edit
+
+
+Clone the repository
+
 git clone https://github.com/nihattadilov/django_winkel/
 cd django_winkel
-2. Create a virtual environment
-bash
-Copy
-Edit
+
+
+Create a virtual environment
+
 python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
-3. Install dependencies
-bash
-Copy
-Edit
+source venv/bin/activate  # Windows: venv\Scripts\activate
+
+
+Install dependencies
+
 pip install -r requirements.txt
-4. Apply migrations
-bash
-Copy
-Edit
+
+
+Apply migrations
+
 python manage.py migrate
-5. Create a superuser
-bash
-Copy
-Edit
+Create a superuser
+
+
 python manage.py createsuperuser
-6. Run the development server
-bash
-Copy
-Edit
+Run the development server
+
+
 python manage.py runserver
