@@ -1,101 +1,97 @@
-🛍️ Django Winkel
 
-Django Winkel is a multilingual (🇺🇸 English, 🇦🇿 Azerbaijani, 🇹🇷 Turkish) full-featured e-commerce and blog web application built with Django. It is designed for online clothing stores and content-focused fashion platforms.
+# 🛍️ Django Winkel
 
-🚀 Features
+**Django Winkel** is a multilingual (🇺🇸 English, 🇦🇿 Azerbaijani, 🇹🇷 Turkish) full-featured **e-commerce** and **blog** web application built with Django. It is designed for online clothing stores and content-focused fashion platforms.
 
-✅ Product listing with pagination & filtering (by clothing and jeans)
+---
 
-📰 Blog/news section with tag-based filtering and search
+## 🚀 Features
 
-🔍 Search function redirects to related product or news
+### 🛒 E-Commerce
+- ✅ Product listing with pagination & filtering (clothing, jeans)
+- 📦 Product detail pages
+- 📉 Dynamic discount price calculation
+- 👤 User registration, login, logout
+- ✅ Form validations and error handling
+- 🗣️ Customer testimonials
 
-📦 Product and news detail pages
+### 📰 Blog
+- 📰 News/blog section with tag-based filtering and search
+- 🔍 Smart search that redirects to related product or blog post
+- 📄 News detail pages
 
-🧾 About page with video support
+### 🌐 General
+- 🧾 About page with embedded video
+- 📬 Contact form (saved to database)
+- 🛠️ Admin support via Django Admin Panel
+- 🌍 Multilingual support: English, Azerbaijani, Turkish
 
-📬 Contact form (saved to DB)
+---
 
-🗣️ Customer testimonials
+## 🧩 Data Models
 
-🛠️ Admin support via Django Admin Panel
+- **Product**: title, description, price, image, category, discount
+- **Clothing / Jeans / Category**: product classifications
+- **News**: title, content, tag, like/dislike, view count
+- **Tag**: associated with news articles
+- **Testimonial**: customer feedback
+- **Contact**: contact form submissions
+- **Subscriber**: newsletter emails
+- **About**: about page content
+- **Setting**: global site data (logo, social links, etc.)
 
-📉 Dynamic discount price calculation
+---
 
-🌍 Multilingual support: English, Azerbaijani, Turkish
+## 🧭 Views Summary
 
-👤 User features:
+| View Name      | Description                                                |
+|----------------|------------------------------------------------------------|
+| `home`         | Homepage with products and testimonials                    |
+| `about`        | About page with video and testimonials                     |
+| `contact`      | Contact form (GET/POST) saved to database                  |
+| `products`     | Product list with pagination and filtering                 |
+| `news`         | News/blog list with tag filtering and search               |
+| `product_single` | Detailed product page                                   |
+| `news_single`  | Detailed news/blog page                                    |
+| `search`       | Redirect to product/news based on input                    |
+| `register`     | User registration with password confirmation               |
+| `login`        | User authentication                                        |
+| `logout_view`  | Logs out user and redirects to homepage                    |
 
-Registration with password confirmation
+---
 
-Login and logout support
+## ⚙️ Setup Instructions
 
-Form validations and error handling
-
-🧩 Models Overview
-Products: Title, description, price, image, clothing/jeans/category relation, discount
-
-Clothing / Jeans / Category: Product classifications
-
-News: Blog posts with tag, like, dislike, view count
-
-Tag: Tags for news filtering
-
-Testimonial: Customer feedback
-
-Contact: Contact form submissions
-
-Subscriber: Newsletter subscriptions
-
-About: About page content
-
-Setting: Global metadata (social links, logo, etc.)
-
-📄 Views Summary
-
-View Name	Description
-home	Homepage with products & testimonials
-about	About page with video and testimonials
-contact	GET/POST contact form with save to DB
-products	Product list, filtered and paginated
-news	News/blog with search and tag filtering
-product_single	Product detail page
-news_single	News detail page
-search	Redirects to news/products based on search input
-register	User registration with password match check
-login	User authentication/login
-logout_view	Logs out user and redirects to home
-
-
-
-⚙️ Setup Instructions
-
-
-Clone the repository
-
-git clone https://github.com/nihattadilov/django_winkel/
+### 1. Clone the Repository
+```bash
+git clone https://github.com/nihattadilov/django_winkel.git
 cd django_winkel
+```
 
-
-Create a virtual environment
-
+### 2. Create a Virtual Environment
+```bash
 python -m venv venv
-source venv/bin/activate  # Windows: venv\Scripts\activate
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+```
 
-
-Install dependencies
-
+### 3. Install Dependencies
+```bash
 pip install -r requirements.txt
+```
 
-
-Apply migrations
-
+### 4. Apply Migrations
+```bash
 python manage.py migrate
-Create a superuser
+```
 
-
+### 5. Create a Superuser
+```bash
 python manage.py createsuperuser
-Run the development server
+```
 
-
+### 6. Run the Development Server
+```bash
 python manage.py runserver
+```
+
+
